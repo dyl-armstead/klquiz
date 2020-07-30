@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kendrick Lamar Quiz</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+<!--Plan on following a similar pattern to https://monkey-quiz-app-student-example--thinkful.repl.co/-->  
+<!--Needs: a start page, question pages with changing background images, an end page, a tally running across the top--> 
+<!--The question pages should only have one right answer, erroring on incorrects and showing right answer--> 
+<!--When questions are answered correctly, score tally should update. Question page should which question number you're on--> 
+<body>
+    <main>
+<!--Tally and question number will go here-->
+        <header role="banner">
+            <section class=headerSection>
+                <!-- Main image to go here, can be clicked to get to homepage-->
+                <img class="headerImg" src=images/header-img.png alt="Kendrick Lamar, logo font">
+            </section>
+            <section class=headerSection>
+                <ul>
+                    <li>Question:
+                        <!-- Current Question / 5-->
+                        0/5
+                    </li>
+                    <li>Score:
+                        <!-- Current Score / 5-->
+                        0
+                    </li>
+                </ul>
+            </section>
+        </header>
+<!--Quiz content will go here-->
+        <section role="quiz graphic container" class="graphicContainer">
+            <section role="quiz content container">
+                <section class="quizStart">
+                </section>
+                <section class="quizQuestionBox">
+                    <form action="">
+                        <fieldset>
+                            <legend> Question # </legend>
+                                <label class="answerOption">
+                                    <input class="radio" type="radio" id=0 value="Answer 1" name="answer" required>
+                                    <span>Answer 1</span><br>
+                                </label>
+                                <label>
+                                    <input class="radio" type="radio" id=0 value="Answer 2" name="answer" required>
+                                    <span>Answer 2</span><br>
+                                </label>
+                                <label> 
+                                    <input class="radio" type="radio" id=0 value="Answer 3" name="answer" required>
+                                    <span>Answer 3</span><br>
+                                </label>
+                                <label>
+                                    <input class="radio" type="radio" id=0 value="Answer 4" name="answer" required>
+                                    <span>Answer 4</span><br>
+                                </label>
+                                <button type="button" class="nextButton">Next</button>
+                        </fieldset>
+                    </form>
+                </section>
+                
+                <section class="quizFinal">
+    
+
+                    </button>
+                </section>
+            </section>
+        </section>
+    </main>
+</body>
+</html>
