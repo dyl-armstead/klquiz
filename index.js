@@ -222,7 +222,7 @@ function finalTally() {
       'I would recommend listening to his music, then trying again.'
     ];
   
-    if (score >= 5) {
+    if (score = 5) {
       array = perfect;
     } else if (score < 4 && score >= 2) {
       array = good;
