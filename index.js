@@ -35,7 +35,7 @@ const STORE = [
         correctAnswer: "Section.80"
     },
     {
-        question: 'While all of Lamar’s albums have been received with much acclaim, only one has received a Pulitzer Prize for Music? Which album received this award?',
+        question: 'While all of Lamar’s albums have received praise from his fans, only one has received a Pulitzer Prize for Music? Which album received this award?',
         answers: [
             "To Pimp a Butterfly" , 
             "Good Kid, M.A.A.D City", 
