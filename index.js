@@ -72,6 +72,7 @@ function displayQuestion() {
         finalTally();
         $('.questionNumber').text(5);
     }
+    console.log('displayQuestion ran')
 }
 
 //function to update score when correct
@@ -79,6 +80,7 @@ function displayQuestion() {
 function updateScore() {
     score++;
     $('.scoreNumber').text(score)
+    console.log('updateScore ran')
 }
 
 //function to update current question number
@@ -86,6 +88,7 @@ function updateScore() {
 function updateQuestionNumber() {
     questionNumber++;
     $('.questionNumber').text(questionNumber + 1)
+    console.log('updateQuestionNumber ran')
 }
 
 //function to restart quiz
@@ -121,6 +124,7 @@ function startQuiz(){
 //creates html for question form
 // createThing 
 function createQuizQuestion(questionIndex) {
+    console.log('createQuizQuestion ran');
     let questionForm = $(`<form>
         <fieldset>
             <legend class="questionText">${STORE[questionIndex].question}</legend>
@@ -139,7 +143,6 @@ function createQuizQuestion(questionIndex) {
 
     $(`<button type="submit" class="submitButton button">Check your answer</button > `).appendTo(fieldSelect);
   return questionForm;
-  console.log('createQuizQuestion ran')
 
 }
 
@@ -173,6 +176,7 @@ function correctAnswer() {
     );
     updateScore();
     console.log('correctAnswer ran')
+    console.log(score);
   }
 
 
@@ -185,6 +189,8 @@ function wrongAnswer() {
       <p class="questionAndScore checkText">${STORE[questionNumber].correctAnswer}</p>
       <button type="button" class="nextButton button">Next one</button>`
     );
+    console.log('wrongAnswer ran')
+    console.log(score);
   }
 
 //generates the next question
@@ -195,10 +201,13 @@ function nextQuestion() {
       updateQuestionNumber();
       $('.quizQuestionBox form').replaceWith(displayQuestion());
     });
+    console.log('nextQuestion ran')
   }
 
 //tally final score and comment at the end of the quiz
 function finalTally() {
+    console.log('finalTally ran');
+    console.log(score);
     $('.quizFinal').show();
   
     const perfect = [
@@ -222,17 +231,17 @@ function finalTally() {
       'I would recommend listening to his music, then trying again.'
     ];
   
-    if (score = 5) {
-      array = perfect;
-    } else if (score < 4 && score >= 2) {
-      array = good;
+    if (score === 5) {
+        array = perfect;
+    } else if (score <= 4 && score >=2){
+        array = good;
     } else {
-      array = bad;
+        array = bad;
     }
     return $('.quizFinal').html(
       `<h3>${array[0]}</h3>
         <img src="${array[1]}" alt="${array[2]}" class="images">
-          <h3 class="scoreHeading">Your score is: <br> ${score} / 5</h3>
+          <h3>Your score is: ${score} / 5</h3>
           <p>${array[3]}</p>
           <button type="submit" class="restartButton button">Restart</button>`
     );
