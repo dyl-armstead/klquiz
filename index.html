@@ -7,16 +7,10 @@
     <link rel="stylesheet" type="text/css" href="index.css" />
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Permanent+Marker&display=swap" rel="stylesheet">
 </head>
-<!--Plan on following a similar pattern to https://monkey-quiz-app-student-example--thinkful.repl.co/-->  
-<!--Needs: a start page, question pages with changing background images, an end page, a tally running across the top--> 
-<!--The question pages should only have one right answer, erroring on incorrects and showing right answer--> 
-<!--When questions are answered correctly, score tally should update. Question page should which question number you're on--> 
 <body>
     <main>
-<!--Tally and question number will go here-->
         <header role="banner">
             <section class=headerSection>
-                <!-- Main image to go here, can be clicked to get to homepage-->
                 <img class="headerImg" src=images/header-img.png alt="Kendrick Lamar, logo font">
             </section>
             <section class="headerSection"> 
@@ -26,17 +20,16 @@
                 </ul>
             </section>
         </header>
-<!--Quiz content will go here-->
         <section role="containerToManipulate" class="mainContainer">
             <section class="quizStart">
                 <h1>You think you know Kendrick Lamar?</h1>
                 <img class="startImg" src=images/kendrick-collage.jpg alt="Collage of Kendrick's popular albums">
                 <button type="button" class="startButton button">Prove it.</button>
             </section>
-            <section class="quizQuestionBox hideBox">
+            <section class="quizQuestionBox coverBox">
              </section>
-            <section class="checkBox hideBox"></section>
-            <section class="quizFinal hideBox"></section>
+            <section class="checkBox coverBox"></section>
+            <section class="quizFinal coverBox"></section>
             </section>
         </section>
     </main>

@@ -62,6 +62,7 @@ let score = 0;
 let questionNumber = 0;
 
 
+//update $('.questionNumber').text(5); 
 //functions for updating page
 //function to display question generateQuestion()
 function displayQuestion() {
@@ -70,9 +71,9 @@ function displayQuestion() {
     } else {
         $('.quizQuestionBox').hide();
         finalTally();
-        $('.questionNumber').text(5);
+        $('.questionNumber').text(5); 
     }
-    console.log('displayQuestion ran')
+//    console.log('displayQuestion ran')
 }
 
 //function to update score when correct
@@ -80,7 +81,7 @@ function displayQuestion() {
 function updateScore() {
     score++;
     $('.scoreNumber').text(score)
-    console.log('updateScore ran')
+//    console.log('updateScore ran')
 }
 
 //function to update current question number
@@ -88,7 +89,7 @@ function updateScore() {
 function updateQuestionNumber() {
     questionNumber++;
     $('.questionNumber').text(questionNumber + 1)
-    console.log('updateQuestionNumber ran')
+//    console.log('updateQuestionNumber ran')
 }
 
 //function to restart quiz
@@ -100,31 +101,23 @@ function resetStats() {
     $('.questionNumber').text(0);
   }
 
-//function to render STORE values
-
-function renderQuizContent() {
-    console.log('`renderQuizContent` ran');
-    const quizContent = STORE;
-}
-
 //functions for updating quizBox
 // starts quiz
 function startQuiz(){
-    $('.hideBox').hide();
+    $('.coverBox').hide();
     $('.quizStart').on('click', '.startButton', function() {
         $('.quizStart').hide();
         $('.questionNumber').text(1);
         $('.quizQuestionBox').show();
         $('.quizQuestionBox').prepend(displayQuestion());
-        console.log('startButton ran');
+ //       console.log('startButton ran');
     });
 
 };
 
 //creates html for question form
-// createThing 
 function createQuizQuestion(questionIndex) {
-    console.log('createQuizQuestion ran');
+ //   console.log('createQuizQuestion ran');
     let questionForm = $(`<form>
         <fieldset>
             <legend class="questionText">${STORE[questionIndex].question}</legend>
@@ -150,7 +143,7 @@ function createQuizQuestion(questionIndex) {
 function submitAnswer() {
     $('.mainContainer').on('submit', function (event) {
       event.preventDefault();
-      $('.hideBox').hide();
+      $('.coverBox').hide();
       $('.checkBox').show();
       let selected = $('input:checked');
       let answer = selected.val();
@@ -161,11 +154,11 @@ function submitAnswer() {
         wrongAnswer();
       }
     });
-    console.log('submitAnswer ran')
+ //   console.log('submitAnswer ran')
   }
 
 
-//resulting feedback if a selected answer is correct
+//result if a selected answer is correct
 //increments user score by one
 function correctAnswer() {
     $('.checkBox').html(
@@ -175,39 +168,39 @@ function correctAnswer() {
         <button type="button" class="nextButton button">Next one</button>`
     );
     updateScore();
-    console.log('correctAnswer ran')
-    console.log(score);
+ //   console.log('correctAnswer ran')
+ //   console.log(score);
   }
 
 
-//resulting feedback if a selected answer is incorrect
+//result if a selected answer is incorrect
 function wrongAnswer() {
     $('.checkBox').html(
       `<h3 class="incorrectHeading">That's the wrong answer...</h3>
       <img src="images/kendrick-damn-shirt.jpg" alt="dissappointed kendrick" class="checkImg">
-      <p class="questionAndScore checkText">It's actually:</p>
-      <p class="questionAndScore checkText">${STORE[questionNumber].correctAnswer}</p>
+      <p class="questionAndScore incorrect-check-text">It's actually:</p>
+      <p class="questionAndScore incorrect-check-text">${STORE[questionNumber].correctAnswer}</p>
       <button type="button" class="nextButton button">Next one</button>`
     );
-    console.log('wrongAnswer ran')
-    console.log(score);
+ //   console.log('wrongAnswer ran')
+ //   console.log(score);
   }
 
 //generates the next question
 function nextQuestion() {
     $('.mainContainer').on('click', '.nextButton', function (event) {
-      $('.hideBox').hide();
+      $('.coverBox').hide();
       $('.quizQuestionBox').show();
       updateQuestionNumber();
       $('.quizQuestionBox form').replaceWith(displayQuestion());
     });
-    console.log('nextQuestion ran')
+ //   console.log('nextQuestion ran')
   }
 
 //tally final score and comment at the end of the quiz
 function finalTally() {
-    console.log('finalTally ran');
-    console.log(score);
+ //   console.log('finalTally ran');
+ //   console.log(score);
     $('.quizFinal').show();
   
     const perfect = [
@@ -252,7 +245,7 @@ function restartQuiz() {
     $('.mainContainer').on('click', '.restartButton', function (event) {
       event.preventDefault();
       resetStats();
-      $('.hideBox').hide();
+      $('.coverBox').hide();
       $('.quizStart').show();
     });
   }
